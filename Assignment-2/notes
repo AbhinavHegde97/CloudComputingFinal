@@ -1,0 +1,59 @@
+
+1) Diff b/w resource and end point .
+Ans : In REST, the resource typically refers to some object or set of objects that are exposed at an API endpoint. /api/users/johnny. An endpoint by itself is just a reference to a uri that accepts web requests that may or may not be RESTful.
+
+2) What is an URI ?
+Ans : REST APIs use Uniform Resource Identifiers (URIs) to address resources.
+
+3) Status codes info - 
+Ans : 
+
+200 - The HTTP 200 OK success status response code indicates that the request has succeeded.
+201 - The HTTP 201 Created success status response code indicates that the request has succeeded and has led to the creation of a resource.
+204 - The server has successfully fulfilled the request and that there is no additional content to send in the response payload body.
+400 - 400 Bad Request response status code indicates that the server could not understand the request due to invalid syntax.
+405 -  405 Method Not Allowed response status code indicates that the request method is known by the server but is not supported by the target resource.
+413 - The HTTP 413 Payload Too Large response status code indicates that the request entity is larger than limits defined by server; the server might close the connection or return a Retry-After header field.
+
+
+4)JSON (JavaScript Object Notation) is a text-based data storage format that is designed to be easy to read for both humans and machines. JSON is generally the most common format for returning data through an API, XML being the second most common.
+
+5) A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
+
+curl command : 
+
+API 1 :
+curl -i "Content-Type: application/json"   --request POST   --data '{"username":"xyz","password":"3d725109c7e7c0bfb9d709836735b56d943d263f"}'   http://localhost:5001/api/v1/users
+
+API 2 :
+curl -i -X "DELETE" http://localhost:5001/api/v1/users/<username>
+
+API 3 :
+curl -i "Content-Type: application/json"   --request GET   --data '{}'   http://localhost:5001/api/v1/categories
+
+API 4 :
+curl -i "Content-Type: application/json"   --request POST   --data '["garbage","sewage"]'   http://localhost:5001/api/v1/categories
+
+API 5 :
+curl -i -X "DELETE" http://localhost:5001/api/v1/categories/<categoryName>
+
+API 6 :
+curl -i "Content-Type: application/json"   --request 'GET'   --data '{}'   http://localhost:5001/api/v1/categories/<categoryName>/acts
+
+API 7 :
+curl -i "Content-Type: application/json"   --request 'GET'   --data '{}'   http://localhost:5001/api/v1/categories/<categoryName>/acts/size
+
+API 8 :
+curl -i "Content-Type: application/json"   --request 'GET'   --data '{}' --url 'http://localhost:5001/api/v1/categories/abc/acts?start=2&end=4'
+
+
+
+API 11:
+
+curl -i "Content-Type: application/json" --request 'POST' --data '{"actId": 1234,"username": "john_doe","timestamp": "DD-MM-YYYY:SS-MM-HH","caption": "caption text","categoryName": "category_xyz","imgB64":"TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvb"}' http://localhost:5001/api/v1/acts
+
+
+
+
+
+
